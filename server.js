@@ -28,7 +28,7 @@ const db = knex({
 });
 
 app.get('/', (req, res) => {
-    res.send(database.users);
+    res.send('it is working');
 })
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt)})
@@ -40,5 +40,5 @@ app.post("/imageurl", (req, res) => { image.handleApiCall(req, res)});
 
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('Connected to Server');
+    console.log(`Connected to Server on port ${PORT}`);
 })
